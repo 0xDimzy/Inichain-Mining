@@ -1,33 +1,33 @@
 # Iniminer Auto Install
 
-## ⚙️ Persyaratan Sistem
-Sistem operasi: Ubuntu/Debian
+## ⚙️ System Requirements
+Operating System: Ubuntu/Debian
 
-Minimal 2 GB RAM
+Minimum 2 GB RAM
 
-Minimal 2 core CPU
+Minimum 2 CPU cores
 
-## Cara Menggunakan
+## How to Use
 
-1. **Unduh Skrip**: Salin skrip 
+1. **Download the Script**: Copy Script
    ```bash
    wget -O install-iniminer.sh https://raw.githubusercontent.com/0xDimzy/Inichain-Mining/main/install_iniminer.sh
    ```
-2. **Beri Izin Eksekusi**: Jalankan perintah berikut untuk memberikan izin eksekusi pada skrip:
+2. **Grant Execution Permission**: Run the following command to make the script executable
    ```bash
    chmod +x install-iniminer.sh
    ```
-3. **Jalankan Skrip**: Eksekusi skrip dengan perintah:
+3. **Run the Script**: Execute the script using
    ```bash
    sudo ./install-iniminer.sh
    ```
-4. **Ikuti Petunjuk**: Ikuti petunjuk yang muncul di terminal untuk memasukkan alamat wallet dan memilih pool mining.
+4. **Follow the Instructions**: Follow the on-screen instructions to enter your wallet address and choose a mining pool.
 
-## Mengelola Layanan Miner
+## Managing the Miner Service
 
-Setelah instalasi selesai, Anda dapat mengelola layanan miner menggunakan perintah berikut:
+After installation, you can manage the miner service using the following commands:
 
-- **Cek status miner**:
+- **Check status miner**:
   ```bash
   sudo systemctl status iniminer.service
   ```
@@ -35,13 +35,13 @@ Setelah instalasi selesai, Anda dapat mengelola layanan miner menggunakan perint
   ```bash
   sudo systemctl restart iniminer.service
   ```
-- **Cek log miner**:
+- **Check log miner**:
   ```bash
   sudo journalctl -fu iniminer -o cat
   ```
-## 🔍 Cek Hasil Mining
+## 🔍 CCheck Mining Results
 
-Anda dapat melihat hasil mining melalui:
+You can check your mining results at:
 
 [Pool A](https://a.yatespool.com/)
 
@@ -49,14 +49,14 @@ Anda dapat melihat hasil mining melalui:
 
 [Pool C](https://c.yatespool.com/)
 
-## Catatan
+## Notes
 
-- Pastikan untuk mengganti `WALLET_ADDRESS` dengan alamat wallet Anda yang valid.
-- Skrip ini dirancang untuk digunakan dengan minimal 2 CPU core.
+- Make sure to replace `WALLET_ADDRESS` with your valid wallet address.
+- This script is designed for systems with at least 2 CPU cores.
 
-## Bergabung dengan Komunitas
+## Join the Community
 
-Jangan lupa untuk bergabung dengan channel Telegram kami untuk mendapatkan informasi terbaru:
+Don't forget to join our Telegram channel for the latest updates:
 [Telegram Channel](https://t.me/balstotairdrop)
 
 ## Source Code [Inichain](https://inichain.gitbook.io/initverseinichain/inichain/mining-mainnet)
