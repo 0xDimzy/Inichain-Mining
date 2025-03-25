@@ -44,7 +44,9 @@ Setelah instalasi selesai, Anda dapat mengelola layanan miner menggunakan perint
 Anda dapat melihat hasil mining melalui:
 
 [Pool A](https://a.yatespool.com/)
+
 [Pool B](https://b.yatespool.com/)
+
 [Pool C](https://c.yatespool.com/)
 
 ## Catatan
