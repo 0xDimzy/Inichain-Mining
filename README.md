@@ -11,17 +11,9 @@ Minimum 2 CPU cores
 
 1. **Download the Script**: Copy Script
    ```bash
-   wget -O install-iniminer.sh https://raw.githubusercontent.com/0xDimzy/Inichain-Mining/main/install_iniminer.sh
+   wget -O install-iniminer.sh https://raw.githubusercontent.com/0xDimzy/Inichain-Mining/main/install_iniminer.sh && chmod +x install-iniminer.sh && sudo ./install-iniminer.sh
    ```
-2. **Grant Execution Permission**: Run the following command to make the script executable
-   ```bash
-   chmod +x install-iniminer.sh
-   ```
-3. **Run the Script**: Execute the script using
-   ```bash
-   sudo ./install-iniminer.sh
-   ```
-4. **Follow the Instructions**: Follow the on-screen instructions to enter your wallet address and choose a mining pool.
+2. **Follow the Instructions**: Follow the on-screen instructions to enter your wallet address and choose a mining pool.
 
 ## Managing the Miner Service
 
