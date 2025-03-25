@@ -11,15 +11,15 @@ Minimal 2 core CPU
 
 1. **Unduh Skrip**: Salin skrip 
    ```bash
-   wget -O install-iniminer.sh https://raw.githubusercontent.com/0xDimzy/Inichain-Mining/main/install-iniminer.sh
+   wget -O install-iniminer.sh https://raw.githubusercontent.com/0xDimzy/Inichain-Mining/main/install_iniminer.sh
    ```
 2. **Beri Izin Eksekusi**: Jalankan perintah berikut untuk memberikan izin eksekusi pada skrip:
    ```bash
-   chmod +x install-iniminer.sh
+   chmod +x install_iniminer.sh
    ```
 3. **Jalankan Skrip**: Eksekusi skrip dengan perintah:
    ```bash
-   sudo ./install-iniminer.sh
+   sudo ./install_iniminer.sh
    ```
 4. **Ikuti Petunjuk**: Ikuti petunjuk yang muncul di terminal untuk memasukkan alamat wallet dan memilih pool mining.
 
