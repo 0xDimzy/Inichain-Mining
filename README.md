@@ -37,7 +37,7 @@ Setelah instalasi selesai, Anda dapat mengelola layanan miner menggunakan perint
   ```
 - **Cek log miner**:
   ```bash
-  sudo journalctl -u iniminer.service --no-pager --lines=50
+  sudo journalctl -fu iniminer -o cat
   ```
 ## 🔍 Cek Hasil Mining
 
