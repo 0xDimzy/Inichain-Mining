@@ -2,7 +2,9 @@
 
 ## ⚙️ Persyaratan Sistem
 Sistem operasi: Ubuntu/Debian
+
 Minimal 2 GB RAM
+
 Minimal 2 core CPU
 
 ## Cara Menggunakan
