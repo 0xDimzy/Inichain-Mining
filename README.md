@@ -8,7 +8,8 @@ Minimal 2 core CPU
 
 ## Cara Menggunakan
 
-1. **Unduh Skrip**: Salin skrip `wget -O install-iniminer.sh https://raw.githubusercontent.com/0xDimzy/Inichain-Mining/main/install-iniminer.sh` ke direktori yang diinginkan.
+1. **Unduh Skrip**: Salin skrip ```bash
+wget -O install-iniminer.sh https://raw.githubusercontent.com/0xDimzy/Inichain-Mining/main/install-iniminer.sh```
 2. **Beri Izin Eksekusi**: Jalankan perintah berikut untuk memberikan izin eksekusi pada skrip:
    ```bash
    chmod +x install-iniminer.sh
