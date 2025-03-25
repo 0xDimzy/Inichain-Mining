@@ -15,11 +15,11 @@ Minimal 2 core CPU
    ```
 2. **Beri Izin Eksekusi**: Jalankan perintah berikut untuk memberikan izin eksekusi pada skrip:
    ```bash
-   chmod +x install_iniminer.sh
+   chmod +x install-iniminer.sh
    ```
 3. **Jalankan Skrip**: Eksekusi skrip dengan perintah:
    ```bash
-   sudo ./install_iniminer.sh
+   sudo ./install-iniminer.sh
    ```
 4. **Ikuti Petunjuk**: Ikuti petunjuk yang muncul di terminal untuk memasukkan alamat wallet dan memilih pool mining.
 
