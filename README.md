@@ -1,19 +1,10 @@
-# Iniminer
+# Iniminer Auto Install
 
-Skrip ini digunakan untuk menginstal dan mengonfigurasi miner bernama IniMiner pada sistem berbasis Linux. Skrip ini secara otomatis memperbarui sistem, menginstal dependensi yang diperlukan, dan mengonfigurasi layanan systemd untuk menjalankan miner.
+## ⚙️ Persyaratan Sistem
 
-## Fitur
-
-- Memperbarui sistem dan menginstal dependensi yang diperlukan.
-- Meminta input dari pengguna untuk alamat wallet dan jumlah CPU core.
-- Memilih pool mining berdasarkan input pengguna.
-- Mengonfigurasi layanan systemd untuk menjalankan miner secara otomatis.
-
-## Prasyarat
-
-- Sistem operasi berbasis Linux (Ubuntu/Debian).
-- Akses ke terminal dengan hak istimewa `sudo`.
-- Koneksi internet yang stabil.
+Sistem operasi: Ubuntu/Debian
+Minimal 2 GB RAM
+Minimal 2 core CPU
 
 ## Cara Menggunakan
 
@@ -48,11 +39,11 @@ Setelah instalasi selesai, Anda dapat mengelola layanan miner menggunakan perint
 
 Anda dapat melihat hasil mining melalui:
 
-Pool A
+Pool A(https://t.me/balstotairdrop)
 
-Pool B
+Pool B(https://t.me/balstotairdrop)
 
-Pool C
+Pool C(https://t.me/balstotairdrop)
 
 ## Catatan
 
