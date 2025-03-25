@@ -1,73 +1,56 @@
-#IniMiner Installer
+# Iniminer
 
-📌 Deskripsi
+Skrip ini digunakan untuk menginstal dan mengonfigurasi miner bernama IniMiner pada sistem berbasis Linux. Skrip ini secara otomatis memperbarui sistem, menginstal dependensi yang diperlukan, dan mengonfigurasi layanan systemd untuk menjalankan miner.
 
-Script ini digunakan untuk menginstal dan mengkonfigurasi IniMiner pada VPS Linux agar dapat melakukan mining di jaringan YatesPool. Pengguna dapat memilih pool dan menentukan jumlah core CPU yang digunakan untuk mining.
+## Fitur
 
-⚙️ Persyaratan Sistem
+- Memperbarui sistem dan menginstal dependensi yang diperlukan.
+- Meminta input dari pengguna untuk alamat wallet dan jumlah CPU core.
+- Memilih pool mining berdasarkan input pengguna.
+- Mengonfigurasi layanan systemd untuk menjalankan miner secara otomatis.
 
-Sistem operasi: Ubuntu/Debian
+## Prasyarat
 
-Akses root
+- Sistem operasi berbasis Linux (Ubuntu/Debian).
+- Akses ke terminal dengan hak istimewa `sudo`.
+- Koneksi internet yang stabil.
 
-Minimal 2 core CPU
+## Cara Menggunakan
 
-Koneksi internet
+1. **Unduh Skrip**: Salin skrip `Test-Iniminer.sh` ke direktori yang diinginkan.
+2. **Beri Izin Eksekusi**: Jalankan perintah berikut untuk memberikan izin eksekusi pada skrip:
+   ```bash
+   chmod +x Test-Iniminer.sh
+   ```
+3. **Jalankan Skrip**: Eksekusi skrip dengan perintah:
+   ```bash
+   ./Test-Iniminer.sh
+   ```
+4. **Ikuti Petunjuk**: Ikuti petunjuk yang muncul di terminal untuk memasukkan alamat wallet dan memilih pool mining.
 
-📥 Instalasi
+## Mengelola Layanan Miner
 
-Download script
+Setelah instalasi selesai, Anda dapat mengelola layanan miner menggunakan perintah berikut:
 
-wget -O install-iniminer.sh https://raw.githubusercontent.com/0xDimzy/Inichain-Mining/main/install-iniminer.sh
-chmod +x install-iniminer.sh
+- **Cek status miner**:
+  ```bash
+  sudo systemctl status iniminer.service
+  ```
+- **Restart miner**:
+  ```bash
+  sudo systemctl restart iniminer.service
+  ```
+- **Cek log miner**:
+  ```bash
+  sudo journalctl -u iniminer.service --no-pager --lines=50
+  ```
 
-Jalankan script
+## Catatan
 
-sudo ./install-iniminer.sh
+- Pastikan untuk mengganti `WALLET_ADDRESS` dengan alamat wallet Anda yang valid.
+- Skrip ini dirancang untuk digunakan dengan minimal 2 CPU core.
 
-Ikuti instruksi
+## Bergabung dengan Komunitas
 
-Masukkan alamat wallet
-
-Pilih pool yang tersedia
-
-Masukkan jumlah core CPU yang akan digunakan
-
-🔧 Manajemen Miner
-
-Cek status miner:
-
-sudo systemctl status iniminer.service
-
-Restart miner:
-
-sudo systemctl restart iniminer.service
-
-Cek log miner:
-
-sudo journalctl -u iniminer.service --no-pager --lines=50
-
-🔍 Cek Hasil Mining
-
-Anda dapat melihat hasil mining melalui:
-
-Pool A
-
-Pool B
-
-Pool C
-
-Gunakan format berikut untuk mengecek akun mining Anda:
-
-https://[pool].yatespool.com/#/account/[WALLET_ADDRESS]
-
-📢 Bergabung di Komunitas
-
-Jangan lupa bergabung ke channel Telegram untuk mendapatkan informasi terbaru:
-👉 Join Telegram
-
-📂 Sumber Kode
-
-Repository ini tersedia di GitHub:
-🔗 Inichain Mining
-
+Jangan lupa untuk bergabung dengan channel Telegram kami untuk mendapatkan informasi terbaru:
+[Telegram Channel](https://t.me/balstotairdrop)
