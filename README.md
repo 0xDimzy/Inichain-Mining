@@ -9,9 +9,9 @@ Minimal 2 core CPU
 ## Cara Menggunakan
 
 1. **Unduh Skrip**: Salin skrip 
-```bash
-wget -O install-iniminer.sh https://raw.githubusercontent.com/0xDimzy/Inichain-Mining/main/install-iniminer.sh
-```
+   ```bash
+   wget -O install-iniminer.sh https://raw.githubusercontent.com/0xDimzy/Inichain-Mining/main/install-iniminer.sh
+   ```
 2. **Beri Izin Eksekusi**: Jalankan perintah berikut untuk memberikan izin eksekusi pada skrip:
    ```bash
    chmod +x install-iniminer.sh
@@ -55,3 +55,5 @@ Anda dapat melihat hasil mining melalui:
 
 Jangan lupa untuk bergabung dengan channel Telegram kami untuk mendapatkan informasi terbaru:
 [Telegram Channel](https://t.me/balstotairdrop)
+
+## Source Code [Inichain](https://inichain.gitbook.io/initverseinichain/inichain/mining-mainnet)
