@@ -17,14 +17,14 @@ Skrip ini digunakan untuk menginstal dan mengonfigurasi miner bernama IniMiner p
 
 ## Cara Menggunakan
 
-1. **Unduh Skrip**: Salin skrip `Test-Iniminer.sh` ke direktori yang diinginkan.
+1. **Unduh Skrip**: Salin skrip `wget -O install-iniminer.sh https://raw.githubusercontent.com/0xDimzy/Inichain-Mining/main/install-iniminer.sh` ke direktori yang diinginkan.
 2. **Beri Izin Eksekusi**: Jalankan perintah berikut untuk memberikan izin eksekusi pada skrip:
    ```bash
-   chmod +x Test-Iniminer.sh
+   chmod +x install-iniminer.sh
    ```
 3. **Jalankan Skrip**: Eksekusi skrip dengan perintah:
    ```bash
-   ./Test-Iniminer.sh
+   sudo ./install-iniminer.sh
    ```
 4. **Ikuti Petunjuk**: Ikuti petunjuk yang muncul di terminal untuk memasukkan alamat wallet dan memilih pool mining.
 
@@ -44,6 +44,15 @@ Setelah instalasi selesai, Anda dapat mengelola layanan miner menggunakan perint
   ```bash
   sudo journalctl -u iniminer.service --no-pager --lines=50
   ```
+## 🔍 Cek Hasil Mining
+
+Anda dapat melihat hasil mining melalui:
+
+Pool A
+
+Pool B
+
+Pool C
 
 ## Catatan
 
