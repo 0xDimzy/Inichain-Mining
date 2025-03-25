@@ -39,7 +39,7 @@ After installation, you can manage the miner service using the following command
   ```bash
   sudo journalctl -fu iniminer -o cat
   ```
-## 🔍 CCheck Mining Results
+## 🔍 Check Mining Results
 
 You can check your mining results at:
 
