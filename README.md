@@ -1,4 +1,4 @@
-IniMiner Installer
+#IniMiner Installer
 
 📌 Deskripsi
 
