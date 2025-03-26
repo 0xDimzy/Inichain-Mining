@@ -32,52 +32,77 @@ sudo apt install wget nano systemd -y
 
 # Wallet validation
 while true; do
-    echo -e "${GREEN}Enter your wallet EVM address (Format 0x12345):${RESET}"
+    echo -e "${GREEN}Enter your wallet EVM address (Format 0x**):${RESET}"
     read -p "👉 " WALLET_ADDRESS
+    
+    if [ -z "$WALLET_ADDRESS" ]; then
+        echo -e "${RED}Wallet address cannot be empty! Please try again.${RESET}"
+        continue
+    fi
+    
     if [[ "$WALLET_ADDRESS" =~ ^0x[a-fA-F0-9]{40}$ ]]; then
+        echo -e "${GREEN}✓ Valid wallet address${RESET}"
         break
     else
-        echo -e "${RED}Invalid wallet address format! Must start with '0x' followed by 40 hexadecimal characters.${RESET}"
+        echo -e "${RED}Invalid wallet format! Address must:${RESET}"
+        echo -e "${RED}- Start with '0x'${RESET}"
+        echo -e "${RED}- Contain exactly 40 hexadecimal characters after '0x'${RESET}"
+        echo -e "${RED}- Only use characters: 0-9 and a-f or A-F${RESET}"
     fi
 done
 
 # Pool selection
-echo -e "${MAGENTA}Select a mining pool:${RESET}"
-echo -e "${BLUE}1. pool-a.yatespool.com:31588${RESET}"
-echo -e "${BLUE}2. pool-b.yatespool.com:32488${RESET}"
-echo -e "${BLUE}3. pool-c.yatespool.com:31189${RESET}"
-read -p "Enter your choice (1/2/3): " POOL_CHOICE
+while true; do
+    echo -e "${MAGENTA}Select a mining pool:${RESET}"
+    echo -e "${BLUE}1. pool-a.yatespool.com:31588${RESET}"
+    echo -e "${BLUE}2. pool-b.yatespool.com:32488${RESET}"
+    echo -e "${BLUE}3. pool-c.yatespool.com:31189${RESET}"
+    read -p "Enter your choice (1/2/3): " POOL_CHOICE
 
-if [ "$POOL_CHOICE" == "1" ]; then
-    POOL="pool-a.yatespool.com:31588"
-    POOL_URL="https://a.yatespool.com/"
-elif [ "$POOL_CHOICE" == "2" ]; then
-    POOL="pool-b.yatespool.com:32488"
-    POOL_URL="https://b.yatespool.com/"
-elif [ "$POOL_CHOICE" == "3" ]; then
-    POOL="pool-c.yatespool.com:31189"
-    POOL_URL="https://c.yatespool.com/"
-else
-    echo -e "${RED}Invalid choice, defaulting to pool-a.yatespool.com:31588${RESET}"
-    POOL="pool-a.yatespool.com:31588"
-    POOL_URL="https://a.yatespool.com/"
-fi
-
-# Worker configuration
-echo -e "${GREEN}Enter worker name (default: Worker001):${RESET}"
-read -p "👉 " WORKER_NAME
-WORKER_NAME=${WORKER_NAME:-Worker001}
+    if [ "$POOL_CHOICE" == "1" ]; then
+        POOL="pool-a.yatespool.com:31588"
+        POOL_URL="https://a.yatespool.com/"
+        break
+    elif [ "$POOL_CHOICE" == "2" ]; then
+        POOL="pool-b.yatespool.com:32488"
+        POOL_URL="https://b.yatespool.com/"
+        break
+    elif [ "$POOL_CHOICE" == "3" ]; then
+        POOL="pool-c.yatespool.com:31189"
+        POOL_URL="https://c.yatespool.com/"
+        break
+    else
+        echo -e "${RED}Invalid choice! Please enter 1, 2, or 3${RESET}"
+    fi
+done
 
 # CPU configuration
 while true; do
-    echo -e "${GREEN}Enter the number of CPU cores (Minimum 2):${RESET}"
+    echo -e "${GREEN}Enter the number of CPU cores to use (Minimum 2):${RESET}"
     read -p "👉 " CPU_CORES
-    if [[ "$CPU_CORES" =~ ^[0-9]+$ ]] && [ "$CPU_CORES" -ge 2 ]; then
-        break
+    
+    if [ -z "$CPU_CORES" ]; then
+        echo -e "${RED}CPU cores cannot be empty! Please enter a number.${RESET}"
+        continue
+    fi
+    
+    if [[ "$CPU_CORES" =~ ^[0-9]+$ ]]; then
+        TOTAL_CORES=$(nproc)
+        
+        if [ "$CPU_CORES" -lt 2 ]; then
+            echo -e "${RED}Error: Minimum 2 CPU cores required!${RESET}"
+        elif [ "$CPU_CORES" -gt "$TOTAL_CORES" ]; then
+            echo -e "${RED}Error: You only have $TOTAL_CORES CPU cores available!${RESET}"
+            echo -e "${YELLOW}Please enter a number between 2 and $TOTAL_CORES${RESET}"
+        else
+            echo -e "${GREEN}✓ Using $CPU_CORES CPU cores${RESET}"
+            break
+        fi
     else
-        echo -e "${RED}Invalid input or less than 2. Please try again.${RESET}"
+        echo -e "${RED}Invalid input! Please enter a valid number.${RESET}"
     fi
 done
+
 
 # Setup CPU devices
 CPU_DEVICES=""
