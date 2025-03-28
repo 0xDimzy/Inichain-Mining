@@ -53,12 +53,12 @@ while true; do
     fi
 done
 
-echo -e "${GREEN}Enter your worker name:${RESET}"
+echo -e "${GREEN}Enter your worker name (Example Worker001 ):${RESET}"
 read -p "👉 " WORKER_NAME
 
 while [ -z "$WORKER_NAME" ]; do
     echo -e "${RED}Worker name cannot be empty! Please try again.${RESET}"
-    echo -e "${GREEN}Enter your worker name (Example Worker001 ):${RESET}"
+    echo -e "${GREEN}Enter your worker name:${RESET}"
     read -p "👉 " WORKER_NAME
 done
 
