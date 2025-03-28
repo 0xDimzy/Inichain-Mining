@@ -35,11 +35,13 @@ while true; do
     echo -e "${GREEN}Enter your wallet EVM address (Format 0x**):${RESET}"
     read -p "👉 " WALLET_ADDRESS
     
+    # Check if input is empty
     if [ -z "$WALLET_ADDRESS" ]; then
         echo -e "${RED}Wallet address cannot be empty! Please try again.${RESET}"
         continue
     fi
     
+    # Validate wallet format
     if [[ "$WALLET_ADDRESS" =~ ^0x[a-fA-F0-9]{40}$ ]]; then
         echo -e "${GREEN}✓ Valid wallet address${RESET}"
         break
@@ -49,6 +51,15 @@ while true; do
         echo -e "${RED}- Contain exactly 40 hexadecimal characters after '0x'${RESET}"
         echo -e "${RED}- Only use characters: 0-9 and a-f or A-F${RESET}"
     fi
+done
+
+echo -e "${GREEN}Enter your worker name:${RESET}"
+read -p "👉 " WORKER_NAME
+
+while [ -z "$WORKER_NAME" ]; do
+    echo -e "${RED}Worker name cannot be empty! Please try again.${RESET}"
+    echo -e "${GREEN}Enter your worker name (Example Worker001 ):${RESET}"
+    read -p "👉 " WORKER_NAME
 done
 
 # Pool selection
@@ -81,12 +92,15 @@ while true; do
     echo -e "${GREEN}Enter the number of CPU cores to use (Minimum 2):${RESET}"
     read -p "👉 " CPU_CORES
     
+    # Check if input is empty
     if [ -z "$CPU_CORES" ]; then
         echo -e "${RED}CPU cores cannot be empty! Please enter a number.${RESET}"
         continue
     fi
     
+    # Check if input is a number and within valid range
     if [[ "$CPU_CORES" =~ ^[0-9]+$ ]]; then
+        # Get total CPU cores available
         TOTAL_CORES=$(nproc)
         
         if [ "$CPU_CORES" -lt 2 ]; then
@@ -146,5 +160,5 @@ echo -e "${CYAN}Use the following commands to manage the miner:${RESET}"
 echo -e "${MAGENTA}1. Check miner status: sudo systemctl status iniminer.service${RESET}"
 echo -e "${MAGENTA}2. Restart miner: sudo systemctl restart iniminer.service${RESET}"
 echo -e "${MAGENTA}3. View miner logs: sudo journalctl -fu iniminer -o cat${RESET}"
-echo -e "${MAGENTA}4. Check your mining progress at: ${POOL_URL}mining/$WALLET_ADDRESS/data${RESET}"
+echo -e "${MAGENTA}4. Check your mining progress at: ${POOL_URL}mining/$WALLET_ADDRESS$/data${RESET}"
 echo -e "\n${YELLOW}📢 Join Telegram: https://t.me/balstotairdrop${RESET}"
