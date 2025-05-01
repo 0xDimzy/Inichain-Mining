@@ -139,6 +139,7 @@ After=network.target
 ExecStart=/root/iniminer-linux-x64 --pool stratum+tcp://$WALLET_ADDRESS.$WORKER_NAME@$POOL $CPU_DEVICES
 WorkingDirectory=/root/
 Restart=always
+RestartSec=10
 
 [Install]
 WantedBy=multi-user.target
